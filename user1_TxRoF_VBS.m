@@ -67,7 +67,6 @@
 
 % Write MATLAB code here
 
-s = rng(211);
 PuntosFFT = 2^19;        % Puntos FFT
 TamanoSubbanda = 100;     % Tamaño de las sub-bandas, debe ser mayor a 1
 NumeroSubbanda = 100;    % Número de sub-bandas
