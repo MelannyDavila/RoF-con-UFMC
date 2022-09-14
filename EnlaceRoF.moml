@@ -1,0 +1,743 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="EnlaceRoF" class="ptolemy.actor.TypedCompositeActor">
+    <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+    </property>
+    <property name="Director Type" class="ptolemy.data.expr.Parameter" value="&quot;OptSIM&quot;">
+    </property>
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2020.09-1-build_1">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1609, 832]">
+    </property>
+    <property name="OptSim Director" class="com.rsoftdesign.simworks.link.OptSimDirector">
+        <property name="Scheduler" class="ptolemy.domains.sdf.kernel.SDFScheduler">
+        </property>
+        <property name="Grid Center (Hz or m)" class="ptolemy.data.expr.Parameter" value="1.93414489032E14">
+        </property>
+        <property name="Grid Specification" class="ptolemy.data.expr.Parameter" value="&quot;Frequency_Hz&quot;">
+        </property>
+        <property name="Bandwidth (Hz or m)" class="ptolemy.data.expr.Parameter" value="3.2E11">
+        </property>
+        <property name="Number of Grid Points (2^n)" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="Dual Polarization" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="Grid Grouping" class="ptolemy.data.expr.Parameter" value="&quot;Frequency&quot;">
+        </property>
+        <property name="Grouping Spacing (Hz or m or %)" class="ptolemy.data.expr.Parameter" value="1.25E10">
+        </property>
+        <property name="Grid File" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="Random Seed" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="Simulation Method" class="ptolemy.data.expr.Parameter" value="&quot;Variable Bandwidth (VBS)&quot;">
+        </property>
+        <property name="VBS Simulation Option" class="ptolemy.data.expr.Parameter" value="&quot;VBS Full&quot;">
+        </property>
+        <property name="Optical Noise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Electrical Noise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="fvbslo_thz" class="ptolemy.data.expr.Parameter" value="190.02301712111603">
+        </property>
+        <property name="fvbslo_nm" class="ptolemy.data.expr.Parameter" value="1576.355575725">
+        </property>
+        <property name="fvbshi_thz" class="ptolemy.data.expr.Parameter" value="190.18301712111605">
+        </property>
+        <property name="fvbshi_nm" class="ptolemy.data.expr.Parameter" value="1577.644424275">
+        </property>
+        <property name="fsym_thz" class="ptolemy.data.expr.Parameter" value="_dep(XU_C_1000 / fsym_nm)">
+        </property>
+        <property name="fsym_nm" class="ptolemy.data.expr.Parameter" value="1577">
+        </property>
+        <property name="bwsym_thz" class="ptolemy.data.expr.Parameter" value="0.16">
+        </property>
+        <property name="bwsym_nm" class="ptolemy.data.expr.Parameter" value="1.28884855">
+        </property>
+        <property name="fspelo_thz" class="ptolemy.data.expr.Parameter" value="188.55876212494536">
+        </property>
+        <property name="fspelo_nm" class="ptolemy.data.expr.Parameter" value="1564.3812596716207">
+        </property>
+        <property name="fspehi_thz" class="ptolemy.data.expr.Parameter" value="191.64727211728672">
+        </property>
+        <property name="fspehi_nm" class="ptolemy.data.expr.Parameter" value="1589.6187403283793">
+        </property>
+        <property name="f0spt_thz" class="ptolemy.data.expr.Parameter" value="_dep(XU_C_1000 / f0spt_nm)">
+        </property>
+        <property name="f0spt_nm" class="ptolemy.data.expr.Parameter" value="1577">
+        </property>
+        <property name="bwspt_thz" class="ptolemy.data.expr.Parameter" value="_dep(fspehi_thz - fspelo_thz)">
+        </property>
+        <property name="bwspt_nm" class="ptolemy.data.expr.Parameter" value="_dep(fspehi_nm - fspelo_nm)">
+        </property>
+        <property name="refbrt" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="fintim" class="ptolemy.data.expr.Parameter" value="6000.0">
+        </property>
+        <property name="totbit" class="ptolemy.data.expr.Parameter" value="60000">
+        </property>
+        <property name="irep" class="ptolemy.data.expr.Parameter" value="&quot;Single Polarization&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="accur" class="ptolemy.data.expr.Parameter" value="&quot;Loose&quot;">
+        </property>
+        <property name="ienf" class="ptolemy.data.expr.Parameter" value="&quot;Statistical&quot;">
+        </property>
+        <property name="amperr" class="ptolemy.data.expr.Parameter" value="0.3">
+        </property>
+        <property name="gderr" class="ptolemy.data.expr.Parameter" value="1.2">
+        </property>
+        <property name="ilaw" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="bperc" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="peakav" class="ptolemy.data.expr.Parameter" value="_dep(20.0 / bwsym_thz)">
+        </property>
+        <property name="ixxx" class="ptolemy.data.expr.Parameter" value="_dep(intFloor(peakav / (0.8 / bwsym_thz) + 1.0))">
+        </property>
+        <property name="phamax" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="supprs" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="samples" class="ptolemy.data.expr.Parameter" value="_dep(f_samples((0.8 / bwsym_thz), refbrt))">
+        </property>
+        <property name="sym_brt" class="ptolemy.data.expr.Parameter" value="_dep(f_sym_bitrate(samples, (0.8 / bwsym_thz)))">
+        </property>
+        <property name="raman_accuracy" class="ptolemy.data.expr.Parameter" value="1e-06">
+        </property>
+        <property name="Verbosity Level" class="ptolemy.data.expr.Parameter" value="2">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="70.0, 35.0">
+        </property>
+        <property name="force" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="full_band" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+    </property>
+    <property name="_vergilGridSize" class="ptolemy.kernel.util.StringAttribute" value="40">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="1.755939524838">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{715.1592865928659, 522.894584102091}">
+    </property>
+    <property name="off_voltage" class="ptolemy.data.expr.Parameter" value="5.0">
+    </property>
+    <entity name="Transmisor" class="user1_TxRoF">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="console_mode" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>user1_TxRoF.obs</configure>
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>5</configure>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="280.0, 400.0">
+        </property>
+    </entity>
+    <entity name="Receptor" class="user1_RxRoF">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="console_mode" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>user1_RxRoF.obs</configure>
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>9</configure>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1080.0, 440.0">
+        </property>
+    </entity>
+    <entity name="Medidor_Potencia_Tx" class="optsim.Miscellaneous.opowme">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="5">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2268872</configure>
+        </property>
+        <property name="band_type" class="ptolemy.data.expr.Parameter" value="&quot;Whole&quot;">
+        </property>
+        <property name="freq_thz" class="ptolemy.data.expr.Parameter" value="192.916527911922">
+        </property>
+        <property name="freq_nm" class="ptolemy.data.expr.Parameter" value="1552.87398">
+        </property>
+        <property name="bandwidth_ghz" class="ptolemy.data.expr.Parameter" value="12.00000000012">
+        </property>
+        <property name="bandwidth_nm" class="ptolemy.data.expr.Parameter" value="0.40069">
+        </property>
+        <doc name="opowmeDesc">Optical Power Meter</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="520.0, 360.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="OSA" class="optsim.Miscellaneous.optspr">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="2">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269002</configure>
+        </property>
+        <property name="npoint" class="ptolemy.data.expr.Parameter" value="1000">
+        </property>
+        <doc name="optsprDesc">Optical Spectrum Analyzer</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="520.0, 520.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="Laser_CW" class="optsim.Laser.laslor">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269035</configure>
+        </property>
+        <property name="freq_thz" class="ptolemy.data.expr.Parameter" value="fsym_thz">
+        </property>
+        <property name="freq_nm" class="ptolemy.data.expr.Parameter" value="1577.0">
+        </property>
+        <property name="source_enable" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="powout_dbm" class="ptolemy.data.expr.Parameter" value="5">
+        </property>
+        <property name="powout_mw" class="ptolemy.data.expr.Parameter" value="3.16228">
+        </property>
+        <property name="linw" class="ptolemy.data.expr.Parameter" value="150">
+        </property>
+        <property name="linw20" class="ptolemy.data.expr.Parameter" value="1492.48116">
+        </property>
+        <property name="phaini_type" class="ptolemy.data.expr.Parameter" value="&quot;Random&quot;">
+        </property>
+        <property name="phaini" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="noise_type" class="ptolemy.data.expr.Parameter" value="&quot;Ideal&quot;">
+        </property>
+        <property name="relax_peak_freq" class="ptolemy.data.expr.Parameter" value="5.0">
+        </property>
+        <property name="relax_peak_ov" class="ptolemy.data.expr.Parameter" value="7.0">
+        </property>
+        <doc name="laslorDesc">Lorentzian Laser</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="280.0, 480.0">
+        </property>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Fotodiodo_PIN" class="optsim.Photodiode.photod_pin">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269037</configure>
+        </property>
+        <property name="ref_freq" class="ptolemy.data.expr.Parameter" value="fsym_thz">
+        </property>
+        <property name="ref_wavel" class="ptolemy.data.expr.Parameter" value="1577.0">
+        </property>
+        <property name="q_efficiency" class="ptolemy.data.expr.Parameter" value="0.7">
+        </property>
+        <property name="responsivity" class="ptolemy.data.expr.Parameter" value="0.87736">
+        </property>
+        <property name="elfil" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <property name="bandwidth" class="ptolemy.data.expr.Parameter" value="min(2 * refbrt, bwsym_thz * 1.0e3/2 - 1)">
+        </property>
+        <property name="noise" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <property name="dark_current" class="ptolemy.data.expr.Parameter" value="0.1">
+        </property>
+        <doc name="photod_pinDesc">PIN Photodiode</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="960.5, 440.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="EleOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Amplificador" class="optsim.Optical_Amplifiers.oampfg">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269050</configure>
+        </property>
+        <property name="gain_type" class="ptolemy.data.expr.Parameter" value="&quot;Flat&quot;">
+        </property>
+        <property name="gain" class="ptolemy.data.expr.Parameter" value="33">
+        </property>
+        <property name="gain_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="${OSLIB}/EDFA_gain.DAT">
+        </property>
+        <property name="no_noise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="noise_type" class="ptolemy.data.expr.Parameter" value="&quot;Flat&quot;">
+        </property>
+        <property name="noise_db" class="ptolemy.data.expr.Parameter" value="4.5">
+        </property>
+        <property name="noise_lin" class="ptolemy.data.expr.Parameter" value="2.81838">
+        </property>
+        <property name="noise_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="${OSLIB}/EDFA_noise.DAT">
+        </property>
+        <property name="force_split" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <doc name="oampfgDesc">Optical Amplifier Fixed Gain</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="880.0, 440.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Modulador_Intensidad" class="optsim.Amplitude_Modulator.oamod">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269055</configure>
+        </property>
+        <property name="loss" class="ptolemy.data.expr.Parameter" value="3.0">
+        </property>
+        <property name="off_voltage" class="ptolemy.data.expr.Parameter" value="4">
+        </property>
+        <property name="ext_ratio_type" class="ptolemy.data.expr.Parameter" value="&quot;Ideal&quot;">
+        </property>
+        <property name="ext_ratio" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="chirp" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="vpigre" class="ptolemy.data.expr.Parameter" value="5">
+        </property>
+        <property name="elfil" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="bandwidth" class="ptolemy.data.expr.Parameter" value="refbrt">
+        </property>
+        <property name="att_mod_db" class="ptolemy.data.expr.Parameter" value="3.0">
+        </property>
+        <property name="att_mod_lin" class="ptolemy.data.expr.Parameter" value="0.70795">
+        </property>
+        <doc name="oamodDesc">Amplitude Modulator sin2</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="400.0, 440.0">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter" value="off_voltage">
+        </property>
+        <port name="EleIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Osciloscopio" class="optsim.Miscellaneous.scope">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="2">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269076</configure>
+        </property>
+        <property name="rate" class="ptolemy.data.expr.Parameter" value="refbrt">
+        </property>
+        <property name="time_res" class="ptolemy.data.expr.Parameter" value="&quot;Automatic&quot;">
+        </property>
+        <property name="subs_factor" class="ptolemy.data.expr.Parameter" value="intRound(1.0e3 / (0.8/bwsym_thz) / rate)">
+        </property>
+        <property name="measure_time" class="ptolemy.data.expr.Parameter" value="&quot;Whole&quot;">
+        </property>
+        <property name="start_time" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="end_time" class="ptolemy.data.expr.Parameter" value="fintim">
+        </property>
+        <doc name="scopeDesc">Electrical Scope</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="400.0, 360.0">
+        </property>
+        <port name="EleIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="Medidor_Potencia_Rx" class="optsim.Miscellaneous.opowme">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="6">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269139</configure>
+        </property>
+        <property name="band_type" class="ptolemy.data.expr.Parameter" value="&quot;Whole&quot;">
+        </property>
+        <property name="freq_thz" class="ptolemy.data.expr.Parameter" value="192.916527911922">
+        </property>
+        <property name="freq_nm" class="ptolemy.data.expr.Parameter" value="1552.87398">
+        </property>
+        <property name="bandwidth_ghz" class="ptolemy.data.expr.Parameter" value="12.00000000012">
+        </property>
+        <property name="bandwidth_nm" class="ptolemy.data.expr.Parameter" value="0.40069">
+        </property>
+        <doc name="opowmeDesc">Optical Power Meter</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="960.0, 360.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="Atenuador" class="optsim.Miscellaneous.oatten">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="16">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269181</configure>
+        </property>
+        <property name="db" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="lin" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <doc name="oattenDesc">Optical Attenuator</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="800.0, 440.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Fibra" class="optsim.Fiber.fiber">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269186</configure>
+        </property>
+        <property name="name" class="ptolemy.data.expr.Parameter" value="&quot;This_Fiber_Only&quot;">
+        </property>
+        <property name="kind" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="len" class="ptolemy.data.expr.Parameter" value="25">
+        </property>
+        <property name="len_range" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="loss_fromfile" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="loss_ref_freq" class="ptolemy.data.expr.Parameter" value="193.41449">
+        </property>
+        <property name="loss_ref_wavel" class="ptolemy.data.expr.Parameter" value="1550.0">
+        </property>
+        <property name="loss" class="ptolemy.data.expr.Parameter" value="0.2">
+        </property>
+        <property name="alfa1" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="alfa2" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="loss_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="l_format_type" class="ptolemy.data.expr.Parameter" value="&quot;Frequency&quot;">
+        </property>
+        <property name="loss_type" class="ptolemy.data.expr.Parameter" value="&quot;File_derived_coefficients&quot;">
+        </property>
+        <property name="disp_fromfile" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="ref_freq" class="ptolemy.data.expr.Parameter" value="193.41449">
+        </property>
+        <property name="ref_wavel" class="ptolemy.data.expr.Parameter" value="1550.0">
+        </property>
+        <property name="beta2" class="ptolemy.data.expr.Parameter" value="-10">
+        </property>
+        <property name="disp" class="ptolemy.data.expr.Parameter" value="7.84038">
+        </property>
+        <property name="beta3" class="ptolemy.data.expr.Parameter" value="0.14746">
+        </property>
+        <property name="disp_de" class="ptolemy.data.expr.Parameter" value="0.07">
+        </property>
+        <property name="beta4" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="beta5" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="disp_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="d_format_type" class="ptolemy.data.expr.Parameter" value="&quot;Beta2_vs._Frequency&quot;">
+        </property>
+        <property name="disp_stat" class="ptolemy.data.expr.Parameter" value="&quot;Uniform&quot;">
+        </property>
+        <property name="disp_std" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="beta2_std" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="disp_corr" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="nonlin_ref_freq" class="ptolemy.data.expr.Parameter" value="193.41449">
+        </property>
+        <property name="nonlin_ref_wavel" class="ptolemy.data.expr.Parameter" value="1550.0">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.26677">
+        </property>
+        <property name="enne2" class="ptolemy.data.expr.Parameter" value="2.5e-20">
+        </property>
+        <property name="aeff" class="ptolemy.data.expr.Parameter" value="80.0">
+        </property>
+        <property name="beat_len" class="ptolemy.data.expr.Parameter" value="5.0">
+        </property>
+        <property name="corr_len" class="ptolemy.data.expr.Parameter" value="0.2">
+        </property>
+        <property name="beat_std" class="ptolemy.data.expr.Parameter" value="0.5">
+        </property>
+        <property name="pmd" class="ptolemy.data.expr.Parameter" value="0.1">
+        </property>
+        <property name="profile_type" class="ptolemy.data.expr.Parameter" value="&quot;Lorentzian&quot;">
+        </property>
+        <property name="raman_ref_freq" class="ptolemy.data.expr.Parameter" value="299.79246">
+        </property>
+        <property name="raman_ref_wavel" class="ptolemy.data.expr.Parameter" value="1000.0">
+        </property>
+        <property name="framan" class="ptolemy.data.expr.Parameter" value="0.18">
+        </property>
+        <property name="tau1" class="ptolemy.data.expr.Parameter" value="12.2">
+        </property>
+        <property name="tau2" class="ptolemy.data.expr.Parameter" value="32.0">
+        </property>
+        <property name="raman_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="custom_type" class="ptolemy.data.expr.Parameter" value="&quot;gr&quot;">
+        </property>
+        <property name="scaling" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="ra_scaling_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="raman_format_type" class="ptolemy.data.expr.Parameter" value="&quot;Frequency&quot;">
+        </property>
+        <property name="ray_type" class="ptolemy.data.expr.Parameter" value="&quot;Ideal&quot;">
+        </property>
+        <property name="ray_db" class="ptolemy.data.expr.Parameter" value="-30.0">
+        </property>
+        <property name="refl_type" class="ptolemy.data.expr.Parameter" value="&quot;Ideal&quot;">
+        </property>
+        <property name="r0_db" class="ptolemy.data.expr.Parameter" value="-40.0">
+        </property>
+        <property name="rl_db" class="ptolemy.data.expr.Parameter" value="-40.0">
+        </property>
+        <property name="ampl_r" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="chart_r" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="powers_chart" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="no_noise" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="raman_th" class="ptolemy.data.expr.Parameter" value="300.0">
+        </property>
+        <property name="single_pump_type" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="raman_pump_type_new" class="ptolemy.data.expr.Parameter" value="&quot;Counter-propagating&quot;">
+        </property>
+        <property name="db_power_new" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="mw_power_new" class="ptolemy.data.expr.Parameter" value="100.0">
+        </property>
+        <property name="pump_freq_new" class="ptolemy.data.expr.Parameter" value="fsym_thz + 13">
+        </property>
+        <property name="pump_wavel_new" class="ptolemy.data.expr.Parameter" value="1476.06108">
+        </property>
+        <property name="pump_atten_new" class="ptolemy.data.expr.Parameter" value="1.2">
+        </property>
+        <property name="multi_pump_type" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
+        </property>
+        <property name="ra_pump_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="ra_loss_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="f_format_type" class="ptolemy.data.expr.Parameter" value="&quot;Frequency&quot;">
+        </property>
+        <property name="fpump_format_type" class="ptolemy.data.expr.Parameter" value="&quot;mW&quot;">
+        </property>
+        <property name="sbs" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="g_b" class="ptolemy.data.expr.Parameter" value="3.0E-11">
+        </property>
+        <property name="delta_fb" class="ptolemy.data.expr.Parameter" value="40.0">
+        </property>
+        <property name="gain_ref_freq" class="ptolemy.data.expr.Parameter" value="193.0">
+        </property>
+        <property name="f_b" class="ptolemy.data.expr.Parameter" value="11.0">
+        </property>
+        <property name="linewidth" class="ptolemy.data.expr.Parameter" value="100.0">
+        </property>
+        <property name="k_pol" class="ptolemy.data.expr.Parameter" value="1.5">
+        </property>
+        <property name="sbs_chart" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="fnonl" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <property name="fnonl_r" class="ptolemy.data.expr.Parameter" value="&quot;Off&quot;">
+        </property>
+        <property name="fpmd1" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <property name="fbir1" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <property name="fbir3" class="ptolemy.data.expr.Parameter" value="&quot;On&quot;">
+        </property>
+        <doc name="fiberDesc">Fiber</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="560.0, 440.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="Fibra_Compensadora" class="optsim.Grating.grating_ideal">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269189</configure>
+        </property>
+        <property name="ref_freq" class="ptolemy.data.expr.Parameter" value="193.41449">
+        </property>
+        <property name="ref_wavel" class="ptolemy.data.expr.Parameter" value="1550">
+        </property>
+        <property name="disp" class="ptolemy.data.expr.Parameter" value="250.0">
+        </property>
+        <property name="beta2" class="ptolemy.data.expr.Parameter" value="-318.86205">
+        </property>
+        <property name="disp_de" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="beta3" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <doc name="grating_idealDesc">Ideal Fiber Grating</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="640.0, 440.0">
+        </property>
+        <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <relation name="link13" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269196</configure>
+        </property>
+    </relation>
+    <relation name="link3" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269199</configure>
+        </property>
+    </relation>
+    <relation name="link4" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269200</configure>
+        </property>
+    </relation>
+    <relation name="link5" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269201</configure>
+        </property>
+    </relation>
+    <relation name="link8" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269202</configure>
+        </property>
+    </relation>
+    <relation name="link10" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269203</configure>
+        </property>
+    </relation>
+    <relation name="link6" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269205</configure>
+        </property>
+    </relation>
+    <relation name="link9" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269206</configure>
+        </property>
+    </relation>
+    <relation name="link11" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269207</configure>
+        </property>
+    </relation>
+    <relation name="link16" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269208</configure>
+        </property>
+    </relation>
+    <relation name="link17" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>2269209</configure>
+        </property>
+    </relation>
+    <relation name="link1" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <link port="Transmisor.SenalTx" relation="link8"/>
+    <link port="Transmisor.SenalTx" relation="link10"/>
+    <link port="Receptor.SenalRx" relation="link1"/>
+    <link port="Medidor_Potencia_Tx.OptIn_1" relation="link5"/>
+    <link port="OSA.OptIn_1" relation="link4"/>
+    <link port="Laser_CW.OptOut_1" relation="link3"/>
+    <link port="Fotodiodo_PIN.OptIn_1" relation="link13"/>
+    <link port="Fotodiodo_PIN.EleOut_1" relation="link1"/>
+    <link port="Amplificador.OptIn_1" relation="link9"/>
+    <link port="Amplificador.OptOut_1" relation="link13"/>
+    <link port="Amplificador.OptOut_1" relation="link6"/>
+    <link port="Modulador_Intensidad.EleIn_1" relation="link8"/>
+    <link port="Modulador_Intensidad.OptIn_1" relation="link3"/>
+    <link port="Modulador_Intensidad.OptOut_1" relation="link4"/>
+    <link port="Modulador_Intensidad.OptOut_1" relation="link5"/>
+    <link port="Modulador_Intensidad.OptOut_1" relation="link11"/>
+    <link port="Osciloscopio.EleIn_1" relation="link10"/>
+    <link port="Medidor_Potencia_Rx.OptIn_1" relation="link6"/>
+    <link port="Atenuador.OptIn_1" relation="link17"/>
+    <link port="Atenuador.OptOut_1" relation="link9"/>
+    <link port="Fibra.OptIn_1" relation="link11"/>
+    <link port="Fibra.OptOut_1" relation="link16"/>
+    <link port="Fibra_Compensadora.OptIn_1" relation="link16"/>
+    <link port="Fibra_Compensadora.OptOut_1" relation="link17"/>
+</entity>
